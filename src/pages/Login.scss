@@ -1,4 +1,4 @@
-@import 'variaveis';
+@import '../stylesheets/vars';
 
 body {
   background-color: $background-color;
@@ -16,49 +16,60 @@ body {
 
 .login-box {
   padding: 4 * $min;
+
   @media (max-width: $max-mobile-size) {
     padding: 3 * $min;
   }
+
   &__title {
     margin: 0 auto 0 auto;
     text-align: center;
     @include type-title;
     color: $primary-color-darker;
   }
+
   &__options {
     @include type-caption;
+
     p {
       margin: 0;
       text-align: left;
+
       label {
         margin: 0 0 $min 0;
         font-size: inherit;
       }
     }
+
     a {
       display: block;
       margin-top: 3px;
       text-align: right;
+
       @media (max-width: $max-mobile-size) {
         text-align: left;
       }
     }
   }
+
   &__main-button {
     display: block;
     margin: (3 * $min) auto 0 auto;
     @include unraise-button;
   }
+
   &__message {
     margin: $min auto 0 auto;
     text-align: center;
     color: $error-color;
     @include type-body1;
   }
+
   &__alert {
     margin: (3 * $min) 0 $min 0;
     border-radius: 4px;
     border: 1px solid $secondary-color;
+
     p {
       margin: 0;
       padding: $min;
@@ -66,8 +77,10 @@ body {
       color: $secondary-color;
     }
   }
+
   &__buttons {
     text-align: center;
+
     .btn {
       margin: $min $min 0 $min;
       @include unraise-button;
@@ -89,9 +102,11 @@ body {
   right: 0;
   margin: auto;
   top: 50%;
+
   @media (min-width: $min-desktop-size) {
     left: 0;
   }
+
   &.with-sidebar {
     @media (min-width: $min-desktop-size) {
       left: 240px;

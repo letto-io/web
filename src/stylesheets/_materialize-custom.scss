@@ -1,0 +1,19 @@
+@import './vars';
+
+.card-student-test {
+  width: 90%;
+  bottom: 10%;
+  max-height: 90%;
+  padding: 15px;
+  right: 2%;
+}
+
+.card-student-test-question {
+  padding: 1%;
+}
+
+.label-textarea-student-test {
+  margin-top: 1%;
+}
+
+@import '~materialize-css/sass/materialize';

@@ -4,7 +4,7 @@ module.exports = {
   rootDir: path.resolve(__dirname, '..', '..'),
   roots: ['<rootDir>/src'],
   collectCoverageFrom: ['src/**/*.js'],
-  setupFiles: ['react-app-polyfill/jsdom'],
+  setupFiles: ['react-app-polyfill/jsdom', 'airbnb-browser-shims'],
   setupFilesAfterEnv: [],
   testMatch: ['<rootDir>/src/**/*.{spec,test}.js'],
   testEnvironment: 'jest-environment-jsdom-fourteen',

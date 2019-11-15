@@ -158,6 +158,11 @@ module.exports = function config(webpackEnv) {
       isEnvDevelopment &&
         require.resolve('react-dev-utils/webpackHotDevClient'),
       // Finally, this is your app's code:
+      path.resolve(__dirname, '../node_modules/jquery/dist/jquery.min.js'),
+      path.resolve(
+        __dirname,
+        '../node_modules/materialize-css/dist/js/materialize.min.js',
+      ),
       paths.appIndexJs,
       // We include the app code last so that if there is a runtime error during
       // initialization, it doesn't blow up the WebpackDevServer client, and
