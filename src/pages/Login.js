@@ -1,4 +1,6 @@
 import React from 'react'
+import Cookie from 'js-cookie'
+import { toast } from 'react-toastify'
 
 import { login } from '../gateways/login'
 
@@ -20,12 +22,30 @@ const Login = () => {
   const onSubmit = React.useCallback(
     (evt) => {
       evt.preventDefault()
+      const endure = persist.checked
 
       login({
         email: email.value,
         password: password.value,
         persist: persist.checked,
       })
+        .then(({ data }) => {
+          const opts = endure ? { expires: 30 } : undefined
+
+          Cookie.set('session', JSON.stringify(data), opts)
+          Cookie.set('token', data.token, opts)
+          if (data.person.admin) {
+            Cookie.set('admin', true, opts)
+          }
+        })
+        .catch(({ response: resp }) => {
+          if (resp.status === 401) {
+            toast('Usuário ou senha inválida', 3000)
+          }
+          if (resp.status >= 500) {
+            toast('Erro no servidor', 3000)
+          }
+        })
     },
     [email.value, password.value, persist.checked],
   )
