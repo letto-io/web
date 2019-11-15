@@ -1,9 +1,0 @@
-.git/
-.gitignore
-.sass-cache/
-.idea/
-node_modules/
-vendor/
-
-Dockerfile
-.dockerignore

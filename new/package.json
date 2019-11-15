@@ -1,0 +1,43 @@
+{
+  "name": "@oddin-org/web",
+  "description": "Default front end for Oddin Web Service",
+  "author": "Bruno Felipe Leal Delfino <bruno-delfino1995@gmail.com>",
+  "contributors": [
+    "Heitor Kuba <hjkuba@yahoo.com>",
+    "Everson Zambon <everson.zambon@gmail.com>",
+    "Everton Zambon <everton_47@hotmail.com>"
+  ],
+  "version": "0.1.0",
+  "license": "GPL-3.0-only ",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "engines": {
+    "node": "^12.13.0",
+    "yarn": "^1.19.1"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "react-scripts": "3.2.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
