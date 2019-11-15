@@ -68,6 +68,7 @@ function getClientEnvironment(publicUrl) {
         return env
       },
       {
+        WS_URL: 'http://localhost',
         // Useful for determining whether we’re running in production mode.
         // Most importantly, it switches React into the correct mode.
         NODE_ENV: process.env.NODE_ENV || 'development',

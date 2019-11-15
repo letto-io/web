@@ -1,57 +1,89 @@
 import React from 'react'
 
+import { login } from '../gateways/login'
+
 import './Login.scss'
 
-const Login = () => (
-  <>
-    <h1 className='login-box__title'>Login</h1>
-    <form ng-submit='login(user)'>
-      <div className='row'>
-        <div className='input-field col s12'>
-          <input
-            id='user-email'
-            type='text'
-            required='required'
-            ng-model='user.email'
-          />
-          <label htmlFor='user-email'>Usuário</label>
-        </div>
-        <div className='input-field col s12'>
-          <input
-            id='user-password'
-            type='password'
-            required='required'
-            ng-model='user.password'
-          />
-          <label htmlFor='user-password'>Senha</label>
-        </div>
-      </div>
-      <div className='login-box__options'>
+const useInput = ({ checkbox = false } = {}) => {
+  const [value, set] = React.useState(checkbox ? false : '')
+  const onChange = (evt) =>
+    checkbox ? set(evt.target.checked) : set(evt.target.value)
+
+  return { [checkbox ? 'checked' : 'value']: value, onChange }
+}
+
+const Login = () => {
+  const email = useInput()
+  const password = useInput()
+  const persist = useInput({ checkbox: true })
+
+  const onSubmit = React.useCallback(
+    (evt) => {
+      evt.preventDefault()
+
+      login({
+        email: email.value,
+        password: password.value,
+        persist: persist.checked,
+      })
+    },
+    [email.value, password.value, persist.checked],
+  )
+
+  return (
+    <>
+      <h1 className='login-box__title'>Login</h1>
+      <form onSubmit={onSubmit}>
         <div className='row'>
-          <div className='col m6 s12'>
-            <p>
-              <input
-                className='filled-in'
-                id='user-persist'
-                type='checkbox'
-                ng-model='user.persist'
-              />
-              <label htmlFor='user-persist'>Manter conectado</label>
-            </p>
+          <div className='input-field col s12'>
+            <input
+              id='user-email'
+              type='text'
+              required='required'
+              value={email.value}
+              onChange={email.onChange}
+            />
+            <label htmlFor='user-email'>Usuário</label>
           </div>
-          <div className='col m6 s12'>
-            <a href='/recuperar_senha'>Esqueci minha senha</a>
+          <div className='input-field col s12'>
+            <input
+              id='user-password'
+              type='password'
+              required='required'
+              value={password.value}
+              onChange={password.onChange}
+            />
+            <label htmlFor='user-password'>Senha</label>
           </div>
         </div>
-      </div>
-      <button
-        className='login-box__main-button btn waves-effect waves-light'
-        type='submit'
-      >
-        Entrar
-      </button>
-    </form>
-  </>
-)
+        <div className='login-box__options'>
+          <div className='row'>
+            <div className='col m6 s12'>
+              <div>
+                <input
+                  className='filled-in'
+                  id='user-persist'
+                  type='checkbox'
+                  checked={persist.checked}
+                  onChange={persist.onChange}
+                />
+                <label htmlFor='user-persist'>Manter conectado</label>
+              </div>
+            </div>
+            <div className='col m6 s12'>
+              <a href='/recuperar_senha'>Esqueci minha senha</a>
+            </div>
+          </div>
+        </div>
+        <button
+          className='login-box__main-button btn waves-effect waves-light'
+          type='submit'
+        >
+          Entrar
+        </button>
+      </form>
+    </>
+  )
+}
 
 export default Login
