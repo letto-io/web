@@ -36,19 +36,7 @@ function getServedPath(appPackageJson) {
   return ensureSlash(servedUrl, true)
 }
 
-const moduleFileExtensions = [
-  'web.mjs',
-  'mjs',
-  'web.js',
-  'js',
-  'web.ts',
-  'ts',
-  'web.tsx',
-  'tsx',
-  'json',
-  'web.jsx',
-  'jsx',
-]
+const moduleFileExtensions = ['web.js', 'js', 'json']
 
 // Resolve file paths in the same order as webpack
 const resolveModule = (resolveFn, filePath) => {
