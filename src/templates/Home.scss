@@ -1,5 +1,7 @@
-@import 'variaveis';
-@import 'navbar_config';
+@import '../stylesheets/material-icons';
+@import '../stylesheets/materialize-custom';
+@import '../stylesheets/vars';
+@import '../stylesheets/navbar-config';
 
 //colocar em outro scss
 .custom-badge {
@@ -18,6 +20,7 @@
 .custom-badge-disabled {
   @extend .custom-badge;
   background-color: $grey-light-color-disabled;
+
   &--prof {
     @extend .custom-badge;
     background-color: $grey-light-color;
@@ -31,9 +34,11 @@
   right: 0;
   margin: auto;
   top: 50%;
+
   @media (min-width: $min-desktop-size) {
     left: 0;
   }
+
   &.with-sidebar {
     @media (min-width: $min-desktop-size) {
       left: 240px;
@@ -46,8 +51,10 @@
     font-size: 20px;
     font-weight: 500;
   }
+
   &__button {
     color: $secondary-color;
+
     @media(max-width: $max-mobile-size) {
       padding: 0 10px 0 10px;
     }
@@ -57,63 +64,81 @@
 .custom-card {
   &__header {
     margin-bottom: 8px;
+
     .title {
       @include type-list-section-title;
     }
+
     .file-title {
       color: $primary-color;
       text-decoration: underline;
     }
+
     .link-title {
       color: #000;
       text-decoration: underline;
     }
+
     .info-title {
       color: $primary-color;
     }
+
     .secondary-info {
       float: right;
+
       @media (max-width: $max-mobile-size) {
         display: block;
         float: none;
       }
+
       @include type-list-section-title;
       color: $type-secondary-color;
+
       &--leading {
         @extend .secondary-info;
         color: $secondary-color;
         font-weight: bold;
       }
     }
+
     .datahora {
       float: right;
+
       @media (max-width: $max-mobile-size) {
         display: block;
         float: none;
       }
+
       @include type-list-section-title;
       color: $type-secondary-color;
     }
   }
+
   &__action {
     .row {
       margin-bottom: 0;
     }
+
     i {
       color: $grey-color;
+
       &:hover {
         color: $grey-light-color;
       }
     }
+
     .card-attachment {
       float: right;
+
       @media(max-width: $max-mobile-size) {
         margin-top: 10px;
         float: none;
       }
+
       a {
         margin-right: 0 !important;
       }
+
       p {
         display: inline-block;
         margin-top: 0;
@@ -122,13 +147,15 @@
         font-weight: 500;
         color: $grey-color;
       }
+
       .card-filename {
         text-transform: none;
         margin-left: 5px;
         color: $primary-color;
-        text-decoration:underline;
+        text-decoration: underline;
       }
     }
+
     .attachment-unique {
       float: none;
       margin-top: 0;
@@ -138,6 +165,7 @@
       @media (min-width: $min-tablet-size) {
         text-align: right;
       }
+
       .btn-flat {
         margin-right: 0 !important;
         padding: 0;
@@ -145,6 +173,7 @@
       }
     }
   }
+
   &__content {
     .info {
       span {
@@ -158,33 +187,41 @@
 .custom-list {
   &__header {
     padding: 20px !important;
+
     h2 {
       margin: 0;
-      @include type-list-section-title(!important);
+      @include type-list-section-title( !important);
       color: $primary-color;
     }
   }
+
   &__item {
     &.two-options {
       padding-right: 100px !important;
     }
+
     &.one-option {
       padding-right: 55px !important;
     }
+
     span {
-      @include type-list-primary(!important);
+      @include type-list-primary( !important);
       color: $type-primary-color;
     }
+
     p {
       @include type-list-secondary;
       color: $type-secondary-color;
     }
-    & > i {
+
+    &>i {
       background-color: $secondary-color !important;
     }
+
     .secondary-content {
       i {
         color: $grey-color;
+
         &:hover {
           color: $grey-light-color
         }
@@ -196,6 +233,7 @@
 .downvote-margin {
   margin-right: 5px;
 }
+
 //
 .modal-criar-item {
   &__titulo {
@@ -203,6 +241,7 @@
     @include type-title;
     color: $type-primary-color;
   }
+
   &__file-button {
     padding: 0 22px 0 22px;
     border: 1px solid $secondary-color;
@@ -210,6 +249,7 @@
     color: $secondary-color;
     background-color: #fafafa !important;
   }
+
   &__multiple-button {
     margin-right: 15px;
     margin-bottom: 15px;
@@ -219,11 +259,13 @@
 //Tela de Palestras
 .lista-disciplinas {
   &__header {
-    @include type-list-section-title(!important);
+    @include type-list-section-title( !important);
     color: $primary-color;
   }
+
   &__body {
     @include type-list-secondary;
+
     a {
       color: $type-primary-color !important;
     }
@@ -235,11 +277,14 @@
   width: 100% !important;
   overflow: hidden;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
   &__item {
     @include type-button;
+
     @media (max-width: 400px) {
       font-size: 12px !important;
     }
+
     & a:hover {
       color: $secondary-color !important;
     }
@@ -251,18 +296,23 @@
     .circle-opened {
       background-color: $green-light-color !important;
     }
+
     a {
       color: $type-primary-color;
+
       span {
-        @include type-list-primary(!important);
+        @include type-list-primary( !important);
       }
-      & > .circle {
+
+      &>.circle {
         background-color: $green-light-color !important;
+
         &:hover {
           background-color: $green-light-color-hover !important;
         }
       }
     }
+
     p {
       @include type-list-secondary;
       color: $type-secondary-color;
@@ -274,26 +324,32 @@
 .lista-material {
   &__header {
     padding: 20px !important;
+
     h2 {
       margin: 0;
-      @include type-list-section-title(!important);
+      @include type-list-section-title( !important);
       color: $primary-color;
     }
   }
+
   &__item {
     span {
-      @include type-list-primary(!important);
+      @include type-list-primary( !important);
     }
+
     p {
       @include type-list-secondary;
       color: $type-secondary-color;
     }
-    & > i {
+
+    &>i {
       background-color: $secondary-color !important;
     }
+
     .secondary-content {
       i {
         color: $grey-color;
+
         &:hover {
           color: $grey-light-color
         }
@@ -306,12 +362,15 @@
 .lista-participantes {
   &__item {
     min-height: 62px !important;
+
     span {
-      @include type-list-primary(!important);
+      @include type-list-primary( !important);
     }
+
     i {
       background-color: $grey-light-color !important;
     }
+
     .user--online {
       background-color: $secondary-color !important;
     }
@@ -321,128 +380,162 @@
 //Tela de Perguntas(Aluno)
 .dropdown-row {
   margin-bottom: 12px;
+
   .custom-dropdown {
     display: block;
     text-align: center;
   }
 }
+
 .filter-item-active {
   background-color: $secondary-color-hover;
   color: white !important;
 }
+
 .pergunta {
   &__header {
     margin-bottom: 8px;
+
     .autor {
       @include type-list-section-title;
     }
+
     .datahora {
       float: right;
+
       @media (max-width: $max-mobile-size) {
         display: block;
         float: none;
       }
+
       @include type-list-section-title;
       color: $type-secondary-color;
     }
   }
+
   &__action {
     .row {
       margin-bottom: 0;
     }
+
     .status {
       @media (min-width: $min-tablet-size) {
         border-right: 1px solid rgba(160, 160, 160, 0.2);
         //text-align: center;//
       }
     }
+
     .upvote {
       height: 36px;
       padding: 8px 0 8px 0;
+
       i {
         vertical-align: middle;
         color: $grey-color;
+
         &:hover {
-          color:$grey-light-color;
+          color: $grey-light-color;
         }
       }
+
       a {
         margin-right: 0 !important;
         color: $grey-color !important;
       }
+
       &--prof {
         @extend .upvote;
         display: inline-block;
       }
     }
+
     .upvote-voted {
       @extend .upvote;
+
       i {
         color: $secondary-color;
+
         &:hover {
           color: $secondary-color-hover;
         }
       }
     }
+
     .upvote-disabled {
       @extend .upvote;
       pointer-events: none;
+
       i {
         color: $grey-light-color-disabled;
       }
+
       &--prof {
         @extend .upvote-disabled;
         display: inline-block;
       }
     }
+
     .check-entendi {
       padding: 8px 0 8px 0;
       text-align: center !important;
-      i{
+
+      i {
         vertical-align: middle;
         color: $green-light-color;
       }
+
       @media (max-width: $max-mobile-size) {
         text-align: right !important;
       }
+
       &--prof {
         @extend .check-entendi;
         margin-left: 24px; //
         display: inline-block;
+
         @media (max-width: $max-mobile-size) {
           margin-left: 16px;
         }
       }
     }
+
     .check-nao-entendi {
       @extend .check-entendi;
+
       i {
         color: $grey-light-color-disabled;
       }
+
       &--prof {
         @extend .check-nao-entendi;
         margin-left: 24px; //
         display: inline-block;
+
         @media (max-width: $max-mobile-size) {
           margin-left: 16px;
         }
       }
     }
+
     //
     .ver-resposta {
       @media (min-width: $min-tablet-size) {
         text-align: right;
       }
+
       .btn-flat {
         margin-right: 0 !important;
         padding: 0;
         color: $secondary-color !important;
       }
+
       &--prof {
         @extend .ver-resposta;
+
         @media (min-width: $min-tablet-size) {
           text-align: center;
         }
+
         @media (max-width: $max-mobile-size) {
           font-size: 12px;
           text-align: center;
@@ -450,11 +543,14 @@
 
       }
     }
+
     .responder {
       @extend .ver-resposta;
+
       @media (min-width: $min-tablet-size) {
         text-align: center;
       }
+
       @media (max-width: $max-mobile-size) {
         font-size: 12px;
         text-align: center;
@@ -466,89 +562,119 @@
 .resposta {
   border-top: 4px solid rgba(160, 160, 160, 0.2);
   background-color: $grey-light-color2;
+
   &__header {
     margin-bottom: 8px;
     padding: 20px 20px 0 20px;
+
     .autor {
       @include type-list-section-title;
     }
+
     .datahora {
       float: right;
+
       @media (max-width: $max-mobile-size) {
         display: block;
         float: none;
       }
+
       @include type-list-section-title;
       color: $type-secondary-color;
     }
   }
+
   &__content {
     padding: 0 20px 0 20px;
   }
+
   &__action {
     padding: 0 20px 0 20px;
     border-top: 1px solid rgba(160, 160, 160, 0.1);
+
     .upvote {
       display: inline-block;
       padding: 16px 0 16px 0;
       height: 36px;
+
       i {
         vertical-align: middle;
+
         &:hover {
           color: $grey-light-color;
         }
       }
+
       a {
         margin-right: 0 !important;
         color: $grey-color !important;
       }
     }
+
     .upvote-disabled {
       @extend .upvote;
       pointer-events: none;
+
       a {
         color: $grey-light-color-disabled !important;
       }
+
       &--prof {
         @extend .upvote-disabled;
+
         a {
           color: $grey-light-color !important;
         }
       }
     }
+
     .upvote-voted {
       @extend .upvote;
+
       i:hover {
         color: $secondary-color-hover;
       }
+
       a {
         color: $secondary-color !important;
       }
     }
+
     .check-entendi {
       display: inline-block;
       margin-left: 24px;
       padding: 16px 0 16px 0;
-      i,a {
+
+      i,
+      a {
         vertical-align: middle;
         color: $green-light-color;
       }
+
       &:hover {
-        i,a {
+
+        i,
+        a {
           color: $green-light-color-hover;
         }
       }
     }
+
     .check-nao-entendi {
       @extend .check-entendi;
-      i,a {
+
+      i,
+      a {
         color: $grey-light-color;
       }
     }
+
     .check-disabled {
       @extend .check-entendi;
       pointer-events: none;
-      i,a {
+
+      i,
+      a {
         color: $grey-light-color2;
       }
     }
@@ -559,10 +685,12 @@
   .row {
     margin-bottom: 0 !important;
   }
+
   &__checkbox {
     margin-top: 0;
     margin-bottom: 16px !important;
   }
+
   &__submit {
     @media (min-width: $min-tablet-size) {
       float: right;
@@ -571,49 +699,49 @@
 }
 
 // CSS dos modais de mídias
-#modal-create-video{
-  max-height: 100%; 
+#modal-create-video {
+  max-height: 100%;
   width: 100%;
   margin-top: -28px;
 }
 
-#form-video{
-  margin-left: 15%; 
+#form-video {
+  margin-left: 15%;
   width: 75%;
 }
 
-#gum{
-  background: #222; 
-  float: left; 
-  width: 400px; 
+#gum {
+  background: #222;
+  float: left;
+  width: 400px;
   min-width: 45%;
-  max-width: 100%; 
+  max-width: 100%;
   margin-bottom: 20px;
 }
 
-#recorded{
-  display: none; 
-  background: #222; 
-  float: right; 
-  width: 45%; 
+#recorded {
+  display: none;
+  background: #222;
+  float: right;
+  width: 45%;
   margin-bottom: 20px;
 }
 
-#recording{
+#recording {
   width: 400px;
   margin-left: 10px;
   margin-top: -25px;
   margin-bottom: 15px;
 }
 
-#recordingAudio{
+#recordingAudio {
   width: 270px;
   margin-left: 22px;
   margin-top: -25px;
   margin-bottom: 15px;
 }
 
-#pRecording{
+#pRecording {
   font-weight: bold;
   color: #c62828;
   text-align: center;
@@ -623,19 +751,21 @@
   background-color: #c62828;
 }
 
-#play{
+#play {
   margin-left: 16px;
 }
 
-#playAudio{
+#playAudio {
   margin-left: 16px;
 }
 
-#record, #recordAudio {
+#record,
+#recordAudio {
   background-color: #2e7d32;
 }
 
-#play, #playAudio {
+#play,
+#playAudio {
   background-color: #0277bd;
 }
 
@@ -643,6 +773,7 @@
   .row {
     margin-bottom: 0 !important;
   }
+
   &__options {
 
     a {
@@ -655,6 +786,7 @@
     }
 
   }
+
   &__submit {
     @media (min-width: $min-tablet-size) {
       float: right;
@@ -668,6 +800,7 @@
 
 .list-checkbox {
   margin-top: 5px !important;
+
   label {
     padding-left: 25px;
     font-size: 14px;
@@ -679,14 +812,17 @@
   color: $primary-color;
 }
 
-.faq-button-answer, .survey-button-answer {
+.faq-button-answer,
+.survey-button-answer {
   float: right;
+
   a {
     margin-right: 0 !important;
   }
 }
 
-.faq-answer-container, .survey-answer-container {
+.faq-answer-container,
+.survey-answer-container {
   display: none;
 }
 
@@ -699,6 +835,7 @@
   margin: 0;
   padding: 30px 15px 30px 15px;
   line-height: 1.5rem;
+
   .faq-index {
     font-weight: bold;
     font-size: 18px;
@@ -723,8 +860,10 @@
 
 .remove-choice-button {
   padding-top: 16px !important;
+
   a {
     color: $grey-color;
+
     &:hover {
       color: $grey-light-color;
     }
@@ -775,9 +914,11 @@
 
 .empty-message {
   margin: 30px 0;
+
   &.add-menu {
     margin: 15px 0;
   }
+
   color: $grey-color;
 }
 

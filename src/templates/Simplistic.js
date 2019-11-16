@@ -9,7 +9,7 @@ const Simplistic = ({ children }) => (
       <img
         className='login-header__logo'
         src='/images/main_logo.png'
-        alt="Logo: A cubist representation of Odin's birds"
+        alt="Logo: A cubist representation of Odin's birds within an hexagon"
       />
     </header>
     <main>
