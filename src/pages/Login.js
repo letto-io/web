@@ -1,18 +1,11 @@
 import React from 'react'
 import Cookie from 'js-cookie'
 import { toast } from 'react-toastify'
+import { Link } from '@reach/router'
 
 import { login } from '../gateways/login'
-
-import './Login.scss'
-
-const useInput = ({ checkbox = false } = {}) => {
-  const [value, set] = React.useState(checkbox ? false : '')
-  const onChange = (evt) =>
-    checkbox ? set(evt.target.checked) : set(evt.target.value)
-
-  return { [checkbox ? 'checked' : 'value']: value, onChange }
-}
+import { useInput } from '../utils/form'
+import Simplistic from '../templates/Simplistic'
 
 const Login = () => {
   const email = useInput()
@@ -51,7 +44,7 @@ const Login = () => {
   )
 
   return (
-    <>
+    <Simplistic>
       <h1 className='login-box__title'>Login</h1>
       <form onSubmit={onSubmit}>
         <div className='row'>
@@ -91,7 +84,7 @@ const Login = () => {
               </div>
             </div>
             <div className='col m6 s12'>
-              <a href='/recuperar_senha'>Esqueci minha senha</a>
+              <Link to='/recuperar-senha'>Esqueci minha senha</Link>
             </div>
           </div>
         </div>
@@ -102,7 +95,7 @@ const Login = () => {
           Entrar
         </button>
       </form>
-    </>
+    </Simplistic>
   )
 }
 
